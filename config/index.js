@@ -3,7 +3,8 @@ module.exports = {
     port: 9999,
     host: '0.0.0.0',
 
-    cssSourceMap: true
+    cssSourceMap: true,
+    assetsSubDirectory: 'static'
   },
 
   prod: {

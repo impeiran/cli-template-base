@@ -27,7 +27,12 @@ exports.genCssLoader = (loaderName, loaderOption) => {
   loaderOption = loaderOption || {}
 
   const loaders = [
-    devMode ? styleLoader : miniCssExtractPlugin.loader,
+    devMode ? styleLoader : {
+      loader: miniCssExtractPlugin.loader,
+      options: {
+        publicPath: '../../'
+      }
+    },
     cssLoader,
     postCssLoader
   ]

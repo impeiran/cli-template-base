@@ -30,6 +30,15 @@ module.exports = {
         use: 'babel-loader'
       },
 
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: utils.assetsPath('assets/[name].[hash:7].[ext]')
+        }
+      },
+
       // sass loader
       {
         test: /\.(scss|sass)$/,
@@ -43,10 +52,10 @@ module.exports = {
       },
 
       // media loader
-      {
-        test: /\.(jpg|png|svg|gif)$/,
-        use: ['file-loader']
-      },
+      // {
+      //   test: /\.(jpg|png|svg|gif)$/,
+      //   use: ['file-loader']
+      // },
 
       // font loader
       {
